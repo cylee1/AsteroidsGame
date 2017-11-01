@@ -7,19 +7,18 @@ public void draw()
 {
 	background(0);
   	bob.show();
-  	bob.move();
+  	keyPressed();
 }
 public void keyPressed()
 {
-	if(key == UP)
+	if(key == 'W' || key == 'w')
 	{
 		bob.move();
 	}
-/*	else if(key == LEFT)
+	/*else if(key == LEFT)
 	{
-
 	}
-	else if(key == RIGHT)
+/*	else if(key == RIGHT)
 	{
 
 	}
@@ -31,6 +30,5 @@ public void keyPressed()
 	}*/
 	else
 	{
-		bob.move();
 	}
 }
