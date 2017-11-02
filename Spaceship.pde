@@ -10,8 +10,8 @@ class Spaceship extends Floater
 		myColor = 255;   
 		myCenterX = (Math.random()*400)+1;
 		myCenterY = (Math.random()*350)+1;
-		myDirectionX = 2;
-		myDirectionY = 3;
+		myDirectionX = 0;
+		myDirectionY = 0;
 		myPointDirection = (Math.random()*360)+1;
 	}
 	public void setX(int x){myCenterX = x;}

@@ -1,34 +1,43 @@
 Spaceship bob = new Spaceship();
+Stars [] squares = new Stars[150];
 public void setup() 
 {
-  size(400,350);
+	size(400,350);
+	for(int i = 0; i < squares.length; i++)
+	{
+		squares[i] = new Stars();
+	}
 }
 public void draw() 
 {
 	background(0);
   	bob.show();
-  	keyPressed();
+  	bob.move();
+  	for(int i = 0; i < squares.length; i++)
+	{
+		squares[i].show();
+	}
 }
 public void keyPressed()
 {
-	if(key == 'W' || key == 'w')
+	if(key == 'w')
 	{
-		bob.move();
+		bob.accelerate(0.2);
 	}
-	/*else if(key == LEFT)
+	else if(key == 'a')
 	{
+		bob.turn(-6);
 	}
-/*	else if(key == RIGHT)
+	else if(key == 'd')
+	{
+		bob.turn(6);
+	}
+	/*else if(key == 'q')
 	{
 
-	}
-	else if(key == SPACE)
-	{
-		myCenterX = (Math.random()*400)+1;
-		myCenterY = (Math.random()*350)+1;
-		myPointDirection = (Math.random()*360)+1;
 	}*/
 	else
 	{
+		bob.move();
 	}
 }
