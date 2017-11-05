@@ -1,6 +1,6 @@
 Spaceship bob = new Spaceship();
-Stars [] squares = new Stars[150];
-Stars [] squares1 = new Squares[100];
+Stars [] squares = new Stars[200];
+Stars [] squares1 = new Squares[50];
 public void setup() 
 {
 	size(400,350);
@@ -32,16 +32,16 @@ public void keyPressed()
 {
 	if(key == 'w')
 	{
-		bob.accelerate(0.2);
+		bob.accelerate(0.5);
 	}
 	else if(key == 'a')
 	{
-		bob.turn(-6);
+		bob.turn(-7);
 		bob.move();
 	}
 	else if(key == 'd')
 	{
-		bob.turn(6);
+		bob.turn(7);
 		bob.move();
 	}
 	else if(key == 'q')
