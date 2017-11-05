@@ -1,27 +1,33 @@
 class Stars //note that this class does NOT extend Floater
 {
 	private int sX, sY;
+	private int myColor = (int)(Math.random()*255)+1;
+	private int myColor1 = (int)(Math.random()*255)+1;
+	private int myColor2 = (int)(Math.random()*255)+1;
 	public Stars()
 	{
   		sX = (int)(Math.random()*400)+1;
   		sY = (int)(Math.random()*350)+1;
 	}
-	public void setsX(int x){sX = x;}
+	/*public void setsX(int x){sX = x;}
 	public int getsX(){return sX;}
 	public void setsY(int y){sY = y;}
-	public int getsY(){return sY;}
+	public int getsY(){return sY;}*/
 
 	public void show()
 	{
 		noStroke();
-		fill((float)(Math.random()*105)+150, (float)(Math.random()*80)+20, (float)(Math.random()*150)+10);
-		rect(sX, sY, 3, 3);
+		fill(myColor, myColor1, myColor2);
+		rect(sX, sY, 2, 2);
 	}
 }
 
 class Squares extends Stars
 {
 	private int sX, sY;
+	private int myColor = (int)(Math.random()*255)+1;
+	private int myColor1 = (int)(Math.random()*255)+1;
+	private int myColor2 = (int)(Math.random()*255)+1;
 	public Squares()
 	{
   		sX = (int)(Math.random()*400)+1;
@@ -30,7 +36,7 @@ class Squares extends Stars
 	public void show()
 	{
 		noStroke();
-		//fill((float)((Math.random()*20)+150), 0, 0);
+		fill(myColor, myColor1, myColor2);
 		rect(sX, sY, 3, 3);
 	}
 }
