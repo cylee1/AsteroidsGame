@@ -34,7 +34,6 @@ public void draw()
 	{
 		rocks[i].show();
 		rocks[i].move();
-		rocks[i].turn(1);
 	}
 	bob.show();
   	bob.move();
