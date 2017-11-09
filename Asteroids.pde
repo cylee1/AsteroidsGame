@@ -1,45 +1,26 @@
 class Asteroid extends Floater
 {
-	private int myColor = (int)(Math.random()*15)+100;
-	private int myColor1 = (int)(Math.random()*15)+100;
-	private int myColor2 = (int)(Math.random()*15)+100;
-	private int myPointDirection = (int)(Math.random()*360)+1;
+	public int rotSpeed = (int)(Math.random()*14)-7;
 	public Asteroid()
 	{
+		corners = 4;
+		int [] xC = {-8, -8, 8, 8};
+		int [] yC = {-8, 8, 8, -8}; 
+		xCorners = xC;
+		yCorners = yC;
+		myColor = (int)(Math.random()*15)+100;
+		myColor1 = (int)(Math.random()*15)+100;
+		myColor2 = (int)(Math.random()*15)+100;
 		myCenterX = (Math.random()*400)+1;
 		myCenterY = (Math.random()*350)+1;
-		myDirectionX = (int)(Math.random()*0.5)-0.5;
-		myDirectionY = (int)(Math.random()*0.5)-0.5;
+		myDirectionX = (int)(Math.random()*2)-1;
+		myDirectionY = (int)(Math.random()*2)-1;	
+		myPointDirection = (int)(Math.random()*360)+1;
 	}
-	public void move ()   //move the floater in the current direction of travel
+	public void move ()
 	{  
-		//change the x and y coordinates by myDirectionX and myDirectionY
-		myCenterX += myDirectionX;    
-		myCenterY += myDirectionY;     
-
-		//wrap around screen
-		if(myCenterX >width)
-		{     
-			myCenterX = 0;    
-		}    
-		else if (myCenterX<0)
-		{   
-			myCenterX = width;    
-		}    
-		if(myCenterY >height)
-		{    
-			myCenterY = 0;    
-		} 
-		else if (myCenterY < 0)
-		{     
-			myCenterY = height;    
-		}   
-	}
-	public void show()
-	{
-		noStroke();
-		fill(myColor, myColor1, myColor2);
-		rect((int)myCenterX, (int)myCenterY, 15, 15);
+		turn(rotSpeed);
+		super.move();
 	}
 	public void setX(int x){myCenterX = x;}
 	public int getX(){return (int)myCenterX;}
