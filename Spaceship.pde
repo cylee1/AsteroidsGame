@@ -8,6 +8,8 @@ class Spaceship extends Floater
 		xCorners = xC;
 		yCorners = yC;
 		myColor = 255;   
+		myColor1 = 255;   
+		myColor2 = 255;   
 		myCenterX = (Math.random()*400)+1;
 		myCenterY = (Math.random()*350)+1;
 		myDirectionX = 0;
