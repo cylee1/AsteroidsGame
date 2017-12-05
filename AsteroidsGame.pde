@@ -1,7 +1,7 @@
 Spaceship bob = new Spaceship();
 Stars [] squares = new Stars[200];
 Stars [] squares1 = new Squares[50];
-Asteroid [] rocks = new Asteroid[10];
+ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 public void setup() 
 {
 	size(400,350);
@@ -13,11 +13,10 @@ public void setup()
 	{
 		squares1[i] = new Squares();
 	}
-	for(int i = 0; i < rocks.length; i++)
+	for(int i = 0; i < 10; i++)
 	{
-		rocks[i] = new Asteroid();
+		rocks.add(new Asteroid());
 	}
-	
 }
 public void draw() 
 {
@@ -30,13 +29,13 @@ public void draw()
 	{
 		squares1[i].show();
 	}
-	for(int i = 0; i < rocks.length; i++)
+	for(int i = 0; i < rocks.size(); i++)
 	{
-		rocks[i].show();
-		rocks[i].move();
+		rocks.get(i).show();
+		rocks.get(i).move();
 	}
 	bob.show();
-  	bob.move();
+	bob.move();
 }
 public void keyPressed()
 {
